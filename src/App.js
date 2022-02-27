@@ -76,7 +76,7 @@ function App() {
   mapboxgl.accessToken = 'pk.eyJ1IjoianVzdG5lc3MiLCJhIjoiY2t2dWhxODl0MDc5YTJ2dG45NWpibnV6ZyJ9.i67QsYlsF8qSLydzMGIQrg';
   const mapContainer = useRef();
   map = useRef();
-  const marker = new mapboxgl.Marker(); // maintain only one marker
+  const marker = new mapboxgl.Marker({draggable: true}); // maintain only one marker
   useEffect(() => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
@@ -91,7 +91,7 @@ function App() {
       marker.setLngLat(selectedCoords).setPopup(new mapboxgl.Popup().setHTML(
         `<paper-button class='big-button' onclick="document.getElementById('reportdialog').style.display = 'block'" style='border-radius:50px; margin:0'>Poster</paper-button>
         <paper-button class='big-button' onclick="document.getElementById('reportdialog').style.display = 'block'" style='border-radius:50px; margin:0'>Sighting</paper-button>`
-      )).addTo(map.current).getPopup();
+      )).addTo(map.current).togglePopup();
     });
     clickMarker = marker;
   });
