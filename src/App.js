@@ -253,7 +253,7 @@ function App() {
       </paper-dialog>
       <div>
         <h1 style={{display:'inline-flex', alignItems:'center', margin:2+'vh', maxWidth:100+'%'}}>
-          PetSpotter <iron-icon icon="pets" style={{transform:"rotate(20deg)"}}></iron-icon>
+          <a href="" style={{color:'black', textDecoration:'none'}}>PetSpotter<iron-icon icon="pets" style={{transform:"rotate(20deg)"}}></iron-icon></a> 
           <div style={{marginLeft:60+'px', backgroundColor:'lightgrey', display:'inline-flex', alignItems:'center', border:'2px solid var(--outlines)', borderRadius:50+'px', height:25+'px'}}>
             <input ref={searchbar} style={{marginLeft:30+'px', fontSize:12+'px', width:1400+'px', maxWidth:40+'vw'}} autoFocus />
             <paper-button class="mini-button" onClick={function(){queryPetName(searchbar.current.value)}}><iron-icon icon="search"></iron-icon></paper-button>
@@ -262,10 +262,10 @@ function App() {
         </h1>
       </div>
       <div style={{flexBasis:100+'%', height:2+'vh'}}></div>
-      <div style={{flexGrow:2, border:'1px solid var(--outlines)'}}>
+      <div style={{flexGrow:2, border:'1px solid var(--outlines)', marginLeft:2+'vw'}}>
         <div id="map" ref={mapContainer} style={{position:'sticky', bottom:0, left:0, height:80+'vh', width:'inherit'}}></div>
       </div>
-      <div id="sidebar" style={{flexGrow:1, maxWidth:30+'vw', border:'1px solid var(--outlines)'}}>
+      <div id="sidebar" style={{flexGrow:1, maxWidth:30+'vw', border:'1px solid var(--outlines)', marginRight:2+'vw'}}>
         <div style={{padding:2+'vh'}}>
           <div style={{display:'flex', alignItems:'center'}}>
             <img id="petpfp" style={{width:120+'px', marginRight:1+'vh'}}></img>
